@@ -32,6 +32,12 @@
     <property name="frameShape">
      <enum>QFrame::Box</enum>
     </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <property name="lineWidth">
+     <number>1</number>
+    </property>
     <property name="text">
      <string>TextLabel</string>
     </property>
@@ -63,7 +69,11 @@
          </widget>
         </item>
         <item row="0" column="1">
-         <widget class="QSpinBox" name="spinBox"/>
+         <widget class="QSpinBox" name="inNota1">
+          <property name="maximum">
+           <number>100</number>
+          </property>
+         </widget>
         </item>
         <item row="1" column="0">
          <widget class="QLabel" name="label_2">
@@ -73,7 +83,11 @@
          </widget>
         </item>
         <item row="1" column="1">
-         <widget class="QSpinBox" name="spinBox_2"/>
+         <widget class="QSpinBox" name="inNota2">
+          <property name="maximum">
+           <number>100</number>
+          </property>
+         </widget>
         </item>
         <item row="2" column="0">
          <widget class="QLabel" name="label_3">
@@ -83,19 +97,36 @@
          </widget>
         </item>
         <item row="2" column="1">
-         <widget class="QSpinBox" name="spinBox_3"/>
+         <widget class="QSpinBox" name="inNota3">
+          <property name="maximum">
+           <number>100</number>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="1">
+         <widget class="QLabel" name="inPromedio">
+          <property name="text">
+           <string>TextLabel</string>
+          </property>
+         </widget>
         </item>
        </layout>
       </widget>
      </item>
-     <item>
-      <widget class="QPushButton" name="pushButton">
-       <property name="text">
-        <string>Promediar</string>
-       </property>
-      </widget>
-     </item>
     </layout>
+   </widget>
+   <widget class="QPushButton" name="btnPromediar">
+    <property name="geometry">
+     <rect>
+      <x>540</x>
+      <y>210</y>
+      <width>124</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Promediar</string>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -112,6 +143,7 @@
      <string>Archivo</string>
     </property>
     <addaction name="actionGuardar"/>
+    <addaction name="actionNuevo"/>
     <addaction name="actionSalir"/>
    </widget>
    <addaction name="menuArchivo"/>
@@ -127,12 +159,13 @@
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
+   <addaction name="actionNuevo"/>
    <addaction name="actionGuardar"/>
   </widget>
   <action name="actionGuardar">
    <property name="icon">
     <iconset resource="Resources.qrc">
-     <normaloff>:/img/Save.ico</normaloff>:/img/Save.ico</iconset>
+     <normaloff>:/img/save-data.png</normaloff>:/img/save-data.png</iconset>
    </property>
    <property name="text">
     <string>Guardar</string>
@@ -147,6 +180,18 @@
    </property>
    <property name="shortcut">
     <string>Ctrl+Q</string>
+   </property>
+  </action>
+  <action name="actionNuevo">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/img/new-document.png</normaloff>:/img/new-document.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Nuevo</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
    </property>
   </action>
  </widget>
